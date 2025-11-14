@@ -10,15 +10,20 @@ class CustomTextField extends StatelessWidget {
     this.sufIcon,
     this.obsecureText,
     this.keyboardType,
-    this.inputFormatter,
+    this.inputFormatter, this.filled, this.focusedBorder, this.borderSide, this.fillColor, this.preIcon,
   });
   final String? hintText;
   final TextEditingController? controller;
   final FormFieldValidator? validator;
   final InkWell? sufIcon;
   final bool? obsecureText;
+  final bool? filled;
   final TextInputType? keyboardType;
   final TextInputFormatter? inputFormatter;
+  final BorderSide? focusedBorder;
+  final BorderSide? borderSide;
+  final Color? fillColor;
+  final Icon? preIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -36,6 +41,9 @@ class CustomTextField extends StatelessWidget {
       cursorColor: Colors.grey,
       cursorHeight: 23,
       decoration: InputDecoration(
+        prefixIcon: preIcon,
+        filled: filled,
+        fillColor: fillColor,
         suffixIcon: sufIcon,
         hintText: "${hintText ?? ""}",
         hintStyle: TextStyle(
@@ -46,11 +54,11 @@ class CustomTextField extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(horizontal: 12),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: borderSide ?? BorderSide(color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: focusedBorder ?? BorderSide(color: Colors.grey),
         ),
       ),
       validator: validator,
