@@ -2,7 +2,6 @@ import 'package:dada_project/Dada_project/view/screen/home_screen/home_screen.da
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 void main() {
   runApp(MyApp());
 }

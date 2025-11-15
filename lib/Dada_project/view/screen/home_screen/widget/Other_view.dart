@@ -1,3 +1,4 @@
+import 'package:dada_project/Dada_project/database/catagories/catagories_data.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../database/best_selling/best_selling.dart';
@@ -77,12 +78,13 @@ class OtherBottomView extends StatelessWidget {
           SizedBox(
             height: 230,
             child: ListView.builder(
+              reverse: true,
               clipBehavior: Clip.none,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: BestSelling().Data.reversed.length,
+              itemCount: CatagoriesData().Data[0]['items'].length,
               itemBuilder: (context, index) {
-                final item = BestSelling().Data[index];
+                final item = CatagoriesData().Data[0]['items'][index];
                 return BestSelingCard(
                   containerheight: 250,
                   containerwidth: 160,

@@ -8,7 +8,10 @@ class BestSelingCard extends StatelessWidget {
     this.regPrice,
     this.discountPrice,
     this.addtocard,
-    this.containerheight, this.containerwidth, this.imageHeight,
+    this.containerheight,
+    this.containerwidth,
+    this.imageHeight,
+    this.positionedImage,
   });
   final String? image;
   final String? title;
@@ -18,6 +21,7 @@ class BestSelingCard extends StatelessWidget {
   final double? containerheight;
   final double? containerwidth;
   final double? imageHeight;
+  final Positioned? positionedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +44,27 @@ class BestSelingCard extends StatelessWidget {
       child: Column(
         spacing: 5,
         children: [
-          Container(
-            height: imageHeight ?? 170,
-            width: MediaQuery.sizeOf(context).width,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                  "${image ?? "https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png"}",
+          Stack(
+            children: [
+              Container(
+                height: imageHeight ?? 170,
+                width: MediaQuery.sizeOf(context).width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(
+                      "${image ?? "https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png"}",
+                    ),
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  color: Colors.grey,
                 ),
               ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-              ),
-              color: Colors.grey,
-            ),
+              positionedImage ?? Positioned(child: Text("")),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 7),
