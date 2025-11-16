@@ -1,4 +1,6 @@
+import 'package:dada_project/Dada_project/view/screen/home_screen/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({super.key});
@@ -11,7 +13,6 @@ class HomeAppbar extends StatelessWidget {
       leading: Padding(
         padding: const EdgeInsets.all(10),
         child: InkWell(
-          onTap: () {},
           child: Image.asset(
             height: 35,
             width: 35,

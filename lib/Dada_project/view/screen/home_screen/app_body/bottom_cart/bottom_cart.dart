@@ -16,7 +16,7 @@ class BottomCart extends StatelessWidget {
         SizedBox(height: 10),
         ListView.builder(
           shrinkWrap: true,
-          itemCount: 2,
+          itemCount: 1,
           itemBuilder: (context, index) {
             return _buildInkWell(
               controller,

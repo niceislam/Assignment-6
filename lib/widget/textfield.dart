@@ -10,7 +10,12 @@ class CustomTextField extends StatelessWidget {
     this.sufIcon,
     this.obsecureText,
     this.keyboardType,
-    this.inputFormatter, this.filled, this.focusedBorder, this.borderSide, this.fillColor, this.preIcon,
+    this.inputFormatter,
+    this.filled,
+    this.focusedBorder,
+    this.borderSide,
+    this.fillColor,
+    this.preIcon,
   });
   final String? hintText;
   final TextEditingController? controller;
@@ -41,6 +46,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: Colors.grey,
       cursorHeight: 23,
       decoration: InputDecoration(
+        errorStyle: TextStyle(color: Color(0xffF4A758)),
         prefixIcon: preIcon,
         filled: filled,
         fillColor: fillColor,
